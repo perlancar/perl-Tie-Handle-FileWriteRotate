@@ -35,6 +35,19 @@ sub PRINT {
 
 =head1 DESCRIPTION
 
+This module ties a filehandle to L<File::Writer::Rotate> object.
+
+I first wrote this module to tie STDERR, so that warnings/errors are logged to
+file (with autorotation, for good behavior).
+
+
+=head1 METHODS
+
+=head2 TIEHANDLE classname, LIST
+
+Tie this package to file handle. C<LIST> will be passed to
+L<File::Writer::Rotate>'s constructor.
+
 
 =head1 SEE ALSO
 
