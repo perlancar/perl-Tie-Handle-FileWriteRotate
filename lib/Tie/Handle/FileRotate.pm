@@ -38,7 +38,7 @@ sub PRINT {
 This module ties a filehandle to L<File::Writer::Rotate> object.
 
 I first wrote this module to tie STDERR, so that warnings/errors are logged to
-file (with autorotation, for good behavior).
+file instead of terminal (with autorotation, for good behavior).
 
 
 =head1 METHODS
@@ -47,6 +47,22 @@ file (with autorotation, for good behavior).
 
 Tie this package to file handle. C<LIST> will be passed to
 L<File::Writer::Rotate>'s constructor.
+
+
+=head1 TIPS
+
+To log warnings/errors to terminal I<as well as> autorotated file, you can do
+something like this instead:
+
+ my $fwr = File::Write::Rotate->new(...);
+ $SIG{__WARN__} = sub {
+     $fwr->write(~~localtime, " ", $_[0], "\n");
+     warn $_[0];
+ };
+ $SIG{__DIE__} = sub {
+     $fwr->write(~~localtime, " ", $_[0], "\n");
+     die $_[0];
+ };
 
 
 =head1 SEE ALSO
