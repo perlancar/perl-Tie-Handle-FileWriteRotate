@@ -1,4 +1,4 @@
-package Tie::Handle::FileRotate;
+package Tie::Handle::FileWriteRotate;
 
 use 5.010;
 use strict;
@@ -26,8 +26,8 @@ sub PRINT {
 
 =head1 SYNOPSIS
 
- use Tie::Handle::FileRotate;
- tie *FH, 'Tie::Handle::FileRotate',
+ use Tie::Handle::FileWriteRotate;
+ tie *FH, 'Tie::Handle::FileWriteRotate',
      dir=>'/some/dir', prefix=>'myapp', size=>25*1024*1024, histories=>5;
  print FH "Logging a line\n";
  print FH "Logging another line\n";
@@ -35,7 +35,7 @@ sub PRINT {
 
 =head1 DESCRIPTION
 
-This module ties a filehandle to L<File::Writer::Rotate> object.
+This module ties a filehandle to L<File::Write::Rotate> object.
 
 I first wrote this module to tie STDERR, so that warnings/errors are logged to
 file instead of terminal (with autorotation, for good behavior).
@@ -46,7 +46,7 @@ file instead of terminal (with autorotation, for good behavior).
 =head2 TIEHANDLE classname, LIST
 
 Tie this package to file handle. C<LIST> will be passed to
-L<File::Writer::Rotate>'s constructor.
+L<File::Write::Rotate>'s constructor.
 
 
 =head1 TIPS
