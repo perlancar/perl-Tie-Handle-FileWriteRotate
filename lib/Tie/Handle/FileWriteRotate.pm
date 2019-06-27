@@ -1,12 +1,13 @@
 package Tie::Handle::FileWriteRotate;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
 
 use File::Write::Rotate;
-
-# VERSION
 
 sub TIEHANDLE {
     my ($class, %args) = @_;
@@ -19,6 +20,9 @@ sub TIEHANDLE {
 sub PRINT {
     my $self = shift;
     $self->{fwr}->write(@_);
+}
+
+sub CLOSE {
 }
 
 1;
