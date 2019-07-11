@@ -1,20 +1,20 @@
-0.040   2019-06-27 (PERLANCAR)
+0.040   2019-06-27  Released-By: PERLANCAR
 
 	- Add missing CLOSE().
 
 
-0.03    2017-07-04 (PERLANCAR)
+0.03    2017-07-04  Released-By: PERLANCAR
 
         - No functional changes.
 
         - [build] Rebuild to use Makefile.PL instead of Build.PL.
 
 
-0.02    2012-12-26 (SHARYANTO)
+0.02    2012-12-26  Released-By: SHARYANTO
 
         - Rename dist from Tie-Handle-FileRotate to Tie-Handle-FileWriteRotate.
 
 
-0.01    2012-12-21 (SHARYANTO)
+0.01    2012-12-21  Released-By: SHARYANTO
 
         - First release.
